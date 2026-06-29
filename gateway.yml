@@ -1,2 +1,4 @@
 app: 
   name: Spring Gateway Service
+server:
+  port: 8080
