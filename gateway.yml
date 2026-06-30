@@ -9,5 +9,5 @@ uniq_identificator: uniqId
 application:
   product:
     url: localhost:8081
-    sku_endpoint: /product/sku/${sku_identificator}
-    uniq_id_endpoint: /product/id/${uniq_identificator}
+    sku_endpoint: /product/sku/{${sku_identificator}}
+    uniq_id_endpoint: /product/id/{${uniq_identificator}}
