@@ -4,3 +4,8 @@ server:
   port: 8082
   servlet:
     context-path: /inventory
+    
+application:
+  product:
+    catalog: 
+      url: localhost:8083/catalog/product
