@@ -7,4 +7,4 @@ server:
 
 downstream:
   product-service:
-    base-url: localhost:8081/product
+    base-url: localhost:8081/product/available
