@@ -3,8 +3,8 @@ app:
 server:
   port: 8080
   servlet:
-    context-path: /api
+    context-path: /proxy
 
-application:
-  product:
-    url: localhost:8081/product/available
+downstream:
+  product-service:
+    base-url: http://product-service
