@@ -8,3 +8,9 @@ application:
   product:
     inventory: 
       url: localhost:8082/inventory/products
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
