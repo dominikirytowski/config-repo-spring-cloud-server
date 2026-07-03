@@ -9,3 +9,11 @@ application:
   product:
     catalog: 
       url: localhost:8083/catalog/product
+      
+resilience4j.retry:
+  instances:
+    myService:
+      maxAttempts: 3
+      waitDuration: 2000ms               
+      exponentialBackoffMultiplier: 2.0 
+      enableExponentialBackoff: true
