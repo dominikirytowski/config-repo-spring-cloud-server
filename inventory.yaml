@@ -12,8 +12,13 @@ application:
       
 resilience4j.retry:
   instances:
-    inventory:
-      maxAttempts: 10
+    productCatalogBySku:
+      maxAttempts: 5
+      waitDuration: 2000ms               
+      exponentialBackoffMultiplier: 2.0 
+      enableExponentialBackoff: true
+    productCatalogByUniq:
+      maxAttempts: 5
       waitDuration: 2000ms               
       exponentialBackoffMultiplier: 2.0 
       enableExponentialBackoff: true
