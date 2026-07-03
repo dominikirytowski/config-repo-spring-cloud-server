@@ -10,15 +10,17 @@ application:
     catalog: 
       url: localhost:8083/catalog/product
       
-resilience4j.retry:
-  instances:
-    productCatalogBySku:
-      maxAttempts: 5
-      waitDuration: 2000ms               
-      exponentialBackoffMultiplier: 2.0 
-      enableExponentialBackoff: true
-    productCatalogByUniq:
-      maxAttempts: 5
-      waitDuration: 2000ms               
-      exponentialBackoffMultiplier: 2.0 
-      enableExponentialBackoff: true
+resilience4j:
+  retry:
+    instances:
+      productCatalogBySku:
+        max-attempts: 5
+        wait-duration: 2s
+        enable-exponential-backoff: true
+        exponential-backoff-multiplier: 2.0
+
+      productCatalogByUniq:
+        max-attempts: 5
+        wait-duration: 2s
+        enable-exponential-backoff: true
+        exponential-backoff-multiplier: 2.0
