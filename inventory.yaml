@@ -9,6 +9,12 @@ application:
   product:
     catalog: 
       url: localhost:8083/catalog/product
+
+logging: 
+  level: 
+    io:
+      github: 
+        resilience4j: DEBUG
       
 resilience4j:
   retry:
