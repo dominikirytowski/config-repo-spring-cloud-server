@@ -12,7 +12,7 @@ application:
       
 resilience4j.retry:
   instances:
-    myService:
+    catalog:
       maxAttempts: 10
       waitDuration: 2000ms               
       exponentialBackoffMultiplier: 2.0 
