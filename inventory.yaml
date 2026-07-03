@@ -20,13 +20,13 @@ resilience4j:
   retry:
     instances:
       productCatalogBySku:
-        max-attempts: 5
+        max-attempts: 3
         wait-duration: 2s
         enable-exponential-backoff: true
         exponential-backoff-multiplier: 2.0
 
       productCatalogByUniq:
-        max-attempts: 5
+        max-attempts: 3
         wait-duration: 2s
         enable-exponential-backoff: true
         exponential-backoff-multiplier: 2.0
