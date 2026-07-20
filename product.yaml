@@ -10,7 +10,7 @@ application:
       url: localhost:8082/inventory/products
 
 resilience4j.circuitbreaker:
-  configs:
+  instances:
     availableProductsFetchCall:
       registerHealthIndicator: true
       slidingWindowSize: 10
