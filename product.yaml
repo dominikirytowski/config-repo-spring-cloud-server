@@ -21,7 +21,7 @@ resilience4j:
     instances:
       InventoryServicegetAllProductsById:
         minimumNumberOfCalls: 10
-  timelimiter:
-    instances:
-      InventoryServicegetAllProductsById:
-        timeoutDuration: 10s
+        permittedNumberOfCallsInHalfOpenState: 5
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 5s
+        failureRateThreshold: 50
