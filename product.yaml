@@ -20,7 +20,7 @@ resilience4j:
   circuitbreaker:
     instances:
       InventoryServicegetAllProductsById:
-        minimumNumberOfCalls: 3
+        minimumNumberOfCalls: 10
   timelimiter:
     instances:
       InventoryServicegetAllProductsById:
