@@ -24,3 +24,29 @@ resilience4j:
         wait-duration: 2s
         enable-exponential-backoff: true
         exponential-backoff-multiplier: 2.0
+        
+  circuitbreaker:
+    instances:
+      inventory:
+        slidingWindowSize: 10
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
+        permittedNumberOfCallsInHalfOpenState: 3
+        
+  timelimiter:
+    instances:
+      ProductCatalogServicegetProductsByUniqId:
+        timeoutDuration: 3s
+
+spring:
+    cloud:
+      openfeign:
+        client:
+          config:
+            product:
+              connectTimeout: 5000
+              readTimeout: 10000
+          default:
+            loggerLevel: full
+        circuitbreaker:
+          enabled: true
