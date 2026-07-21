@@ -9,13 +9,19 @@ application:
     inventory: 
       url: localhost:8082/inventory/products
 
-spring.cloud.openfeign.circuitbreaker: 
-  enabled: true
-  registerHealthIndicator: true
-  slidingWindowSize: 10
-  minimumNumberOfCalls: 5
-  permittedNumberOfCallsInHalfOpenState: 3
-  automaticTransitionFromOpenToHalfOpenEnabled: true
-  waitDurationInOpenState: 5s
-  failureRateThreshold: 50
-  eventConsumerBufferSize: 10
+spring:
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
+        alphanumeric-ids:
+          enabled: true
+resilience4j:
+  circuitbreaker:
+    instances:
+      product:
+        minimumNumberOfCalls: 3
+  timelimiter:
+    instances:
+      product:
+        timeoutDuration: 10s
