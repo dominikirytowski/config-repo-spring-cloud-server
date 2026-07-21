@@ -8,3 +8,29 @@ application:
   product:
     inventory: 
       url: localhost:8082/inventory/products
+
+spring:
+    cloud:
+      openfeign:
+        client:
+          config:
+            product:
+              connectTimeout: 5000
+              readTimeout: 10000
+        circuitbreaker:
+          enabled: true
+          alphanumeric-ids:
+            enabled: true
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      product:
+        slidingWindowSize: 10
+        failureRateThreshold: 30
+        waitDurationInOpenState: 5s
+        permittedNumberOfCallsInHalfOpenState: 3
+  timelimiter:
+    instances:
+      InventoryServicegetAllProductsByIdExternalCallServiceCallDto:
+        timeoutDuration: 6s
